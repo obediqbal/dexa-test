@@ -1,0 +1,3 @@
+[submodule "services/attendance"]
+	path = services/attendance
+	url = https://github.com/obediqbal/dexa-absensi-wfh.git
