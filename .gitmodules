@@ -4,3 +4,6 @@
 [submodule "services/auth"]
 	path = services/auth
 	url = https://github.com/obediqbal/dexa-auth.git
+[submodule "services/staffs"]
+	path = services/staffs
+	url = https://github.com/obediqbal/dexa-staff-management.git
