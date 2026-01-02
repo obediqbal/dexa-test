@@ -1,3 +1,6 @@
 [submodule "services/attendance"]
 	path = services/attendance
 	url = https://github.com/obediqbal/dexa-absensi-wfh.git
+[submodule "services/auth"]
+	path = services/auth
+	url = https://github.com/obediqbal/dexa-auth.git
