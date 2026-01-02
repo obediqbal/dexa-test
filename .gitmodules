@@ -7,3 +7,6 @@
 [submodule "services/staffs"]
 	path = services/staffs
 	url = https://github.com/obediqbal/dexa-staff-management.git
+[submodule "frontend/app"]
+	path = frontend/app
+	url = https://github.com/obediqbal/dexa-frontend.git
