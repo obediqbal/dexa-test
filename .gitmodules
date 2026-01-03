@@ -1,12 +1,16 @@
 [submodule "services/attendance"]
 	path = services/attendance
 	url = https://github.com/obediqbal/dexa-absensi-wfh.git
+	branch = main
 [submodule "services/auth"]
 	path = services/auth
 	url = https://github.com/obediqbal/dexa-auth.git
+	branch = main
 [submodule "services/staffs"]
 	path = services/staffs
 	url = https://github.com/obediqbal/dexa-staff-management.git
+	branch = main
 [submodule "frontend/app"]
 	path = frontend/app
 	url = https://github.com/obediqbal/dexa-frontend.git
+	branch = main
