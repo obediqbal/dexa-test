@@ -14,3 +14,7 @@
 	path = frontend/app
 	url = https://github.com/obediqbal/dexa-frontend.git
 	branch = main
+[submodule "services/bff"]
+	path = services/bff
+	url = https://github.com/obediqbal/dexa-bff.git
+	branch = main
