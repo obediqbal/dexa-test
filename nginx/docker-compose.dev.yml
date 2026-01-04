@@ -86,6 +86,22 @@ services:
     networks:
       - microservices
 
+  frontend:
+    build:
+      context: ../frontend/app
+      dockerfile: Dockerfile.dev
+    expose:
+      - "5173"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../frontend/app:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://nginx:3010
+    networks:
+      - microservices
+
 networks:
   microservices:
     driver: bridge
