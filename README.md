@@ -57,7 +57,7 @@ The entire system can be run using Docker Compose.
 
 2. Build and start the services:
    ```bash
-   docker-compose up --build -d
+   docker-compose -f .\docker-compose.dev.yml up --build -d
    ```
 
 The API gateway will be available at `http://localhost:3010`.
