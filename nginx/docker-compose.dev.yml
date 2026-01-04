@@ -79,7 +79,7 @@ services:
       - /app/node_modules
     environment:
       - PORT=3003
-      - STAFF_SERVICE_URL=http://staffs:3002
+      - STAFFS_SERVICE_URL=http://staffs:3002
       - ATTENDANCE_SERVICE_URL=http://attendance:3000
       - AUTH_SERVICE_URL=http://auth:3001
       - JWT_SECRET=${JWT_SECRET}
