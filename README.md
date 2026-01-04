@@ -42,7 +42,8 @@ The following endpoints are exposed via NGINX at port `3010`.
 
 ## Running the System
 
-The entire system can be run using Docker Compose.
+The entire system can be run using Docker Compose. 
+> If you encounter any problems, please try running each services locally with npm, follow the instructions on every repos.
 
 ### Prerequisites
 - Docker and Docker Compose installed
