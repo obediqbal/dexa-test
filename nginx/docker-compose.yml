@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - auth
+      - staffs
+      - attendance
+      - bff
+    networks:
+      - microservices
+
+  auth:
+    build: ../services/auth
+    expose:
+      - "3001"
+    environment:
+      - PORT=3001
+      - DATABASE_URL=${AUTH_DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRES_IN=${JWT_EXPIRES_IN}
+    networks:
+      - microservices
+
+  staffs:
+    build: ../services/staffs
+    expose:
+      - "3002"
+    environment:
+      - PORT=3002
+      - DATABASE_URL=${STAFF_DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+    networks:
+      - microservices
+
+  attendance:
+    build: ../services/attendance
+    expose:
+      - "3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=${ATTENDANCE_DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - GCS_PROJECT_ID=${GCS_PROJECT_ID}
+      - GCS_BUCKET_NAME=${GCS_BUCKET_NAME}
+      - GCS_KEY_FILE=${GCS_KEY_FILE}
+      - MAX_FILE_SIZE_MB=${MAX_FILE_SIZE_MB}
+    networks:
+      - microservices
+
+  bff:
+    build: ../services/bff
+    expose:
+      - "3003"
+    environment:
+      - PORT=3003
+      - STAFF_SERVICE_URL=http://staffs:3002
+      - ATTENDANCE_SERVICE_URL=http://attendance:3000
+      - JWT_SECRET=${JWT_SECRET}
+    networks:
+      - microservices
+
+networks:
+  microservices:
+    driver: bridge
